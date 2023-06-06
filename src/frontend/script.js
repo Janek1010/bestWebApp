@@ -41,7 +41,8 @@
 //   ];
 
 $(document).ready(function() {
-
+    loadData();
+    
     function loadData() {
       $.ajax({
         url: "http://192.168.1.137:8080",
