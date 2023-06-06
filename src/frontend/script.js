@@ -11,7 +11,7 @@
 //             const flashcardInfo = "name: "+flashcard.name+" description: "+flashcard.description+" category: "+flashcard.category;
 //             flashcardDiv.text(flashcardInfo);
 //             $("#show-flashcards").append(flashcardDiv);
-            
+
 //           }
 //         },
 //         error: function() {
@@ -19,7 +19,7 @@
 //         }
 //       });
 //     }
-  
+
 //   });
 
 // const data = [
@@ -42,22 +42,24 @@
 
 $(document).ready(function() {
     loadData();
-    
-    function loadData() {
-      $.ajax({
-        url: "http://192.168.1.137:8080",
-        method: "GET",
-        dataType: "JSON",
-        success: generateDataButton(data),
-        error: function() {
-           $("#show-flashcards").text("error fetching the data");
-        }
-      });
-    }
-  
-  });
 
- // <button onClick="showData()" id="show-flashcards-btn">Show </button>
+    function loadData() {
+        $.ajax({
+            url: "http://192.168.1.137:8080/api/flashcards",
+            method: "GET",
+            dataType: "JSON",
+            success: function(data) {
+                generateDataButton(data);
+            },
+            error: function() {
+                $("#show-flashcards").text("error fetching the data");
+            }
+        });
+    }
+});
+
+
+// <button onClick="showData()" id="show-flashcards-btn">Show </button>
 
 function generateDataButton(data){
     const showDataButton = $("<button>");
@@ -69,7 +71,7 @@ function generateDataButton(data){
 }
 
 function showData(data){
-   
+
     const hideDataButton = $("<button>");
     hideDataButton.text("Hide");
     hideDataButton.on("click", function(){
@@ -80,14 +82,14 @@ function showData(data){
         $("#hide-data-btn").append(hideDataButton);
     }
     $("#show-flashcards").empty();
-for (let flashcard of data){
-    const flashcardDiv =  $("<div>");
-    flashcardDiv.addClass("flashcard-element");
-    flashcardDiv.append($("<p>").text("name: " + flashcard.name));
-    flashcardDiv.append($("<p>").text("description: " + flashcard.description));
-    flashcardDiv.append($("<p>").text("category: " + flashcard.category));
-    $("#show-flashcards").append(flashcardDiv);
-  }
+    for (let flashcard of data){
+        const flashcardDiv =  $("<div>");
+        flashcardDiv.addClass("flashcard-element");
+        flashcardDiv.append($("<p>").text("name: " + flashcard.name));
+        flashcardDiv.append($("<p>").text("description: " + flashcard.description));
+        flashcardDiv.append($("<p>").text("category: " + flashcard.category));
+        $("#show-flashcards").append(flashcardDiv);
+    }
 }
 
 function hideData(){

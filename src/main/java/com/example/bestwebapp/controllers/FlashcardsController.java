@@ -14,6 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin
 public class FlashcardsController {
     private final String FLASHCARDS_PATH = "/api/flashcards";
     private final FlashcardService flashcardService;
