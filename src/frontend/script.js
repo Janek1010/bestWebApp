@@ -1,26 +1,5 @@
-// $(document).ready(function() {
 
-//     function loadData() {
-//       $.ajax({
-//         url: "http://192.168.1.137:8080",
-//         method: "GET",
-//         dataType: "JSON",
-//         success: function(data) {
-//           for (let flashcard in data){
-//             const flashcardDiv =  $("<div>");
-//             const flashcardInfo = "name: "+flashcard.name+" description: "+flashcard.description+" category: "+flashcard.category;
-//             flashcardDiv.text(flashcardInfo);
-//             $("#show-flashcards").append(flashcardDiv);
-
-//           }
-//         },
-//         error: function() {
-//            $("#show-flashcards").text("error fetching the data");
-//         }
-//       });
-//     }
-
-//   });
+// THE COMMENTED LINES ARE FOR TESTING THE WEBSITE WITHOUT A SERVER.
 
 // const data = [
 //     {
@@ -39,11 +18,11 @@
 //       category: "Category 1"
 //     },
 //   ];
+// $(document).ready(function() {
+//     generateDataButton(data);
+// });
 
 $(document).ready(function() {
-    loadData();
-
-    function loadData() {
         $.ajax({
             url: "http://192.168.1.137:8080/api/flashcards",
             method: "GET",
@@ -55,16 +34,15 @@ $(document).ready(function() {
                 $("#show-flashcards").text("error fetching the data");
             }
         });
-    }
 });
 
-
-// <button onClick="showData()" id="show-flashcards-btn">Show </button>
 
 function generateDataButton(data){
     const showDataButton = $("<button>");
     showDataButton.text("Show");
-    showDataButton.on("click", showData(data));
+    showDataButton.on("click", function() {
+        showData(data);
+      });
     if ($("#show-data-btn").find("button").length === 0) {
         $("#show-data-btn").append(showDataButton);
     }
