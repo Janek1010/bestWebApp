@@ -24,7 +24,7 @@
 
 $(document).ready(function() {
         $.ajax({
-            url: "http://192.168.1.137:8080/api/flashcards",
+            url: "http://localhost:8080/api/flashcards",
             method: "GET",
             dataType: "JSON",
             success: function(data) {
