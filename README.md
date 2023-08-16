@@ -1,15 +1,12 @@
 # bestWebApp
-## things to add:
-### FRONTEND
-1. deleting and changing the flashcard after clicking on it
-2. adding flashcards
-3. choosing specific category instead of all flashcards
-4. main webpage
 
-change vanilla JS to React??? https://www.baeldung.com/spring-boot-react-crud
+This is a collaborative Java+React project.
+We are creating an interactive flashcards application, with an open and exploratory approach, without predefined goals.
 
-### BACKEND
-1. implementing users, every user needs to have their own decks; standard decks must also be available
-2. testing 
+## Getting started
 
-test
+To launch backend server, start **src\main\java\com\example\bestwebapp\BestWebAppApplication.java**
+To launch frontend, go to **src\frontend** and use ```npm start``` command.
+
+Please mind that backend and frontend are not yet connected (they are working on mock data at this point).
+
