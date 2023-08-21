@@ -5,8 +5,8 @@ We are creating an interactive flashcards application, with an open and explorat
 
 ## Getting started
 
-- To launch backend server, start **src\main\java\com\example\bestwebapp\BestWebAppApplication.java**
-- To launch frontend, go to **src\frontend** and use ```npm start``` command.
+- To launch server, start **src\main\java\com\example\bestwebapp\BestWebAppApplication.java**
 
-Please mind that backend and frontend are not yet connected (they are working on mock data at this point).
+- To launch frontend (without backend), go to **src\frontend**, run `npm install` and then `npm start` command.
 
+- To make changes to the frontend and integrate it with backend, go to **src\frontend**, run `npm run build` and copy the contents of build folder into **src\main\resources\static**
