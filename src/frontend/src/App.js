@@ -1,8 +1,9 @@
-import FlashcardView from "./components/FlashcardView";
+import AllFlashcardsView from "./components/AllFlashcardsView";
+
 function App() {
   return (
     <div className="App">
-     <FlashcardView/>
+      <AllFlashcardsView />
     </div>
   );
 }
