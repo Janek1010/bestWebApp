@@ -40,7 +40,7 @@ function AllFlashcardsView() {
     <Box>
       {!showData ? (
         <Button id="show-data-btn" variant="contained" onClick={handleShowData}>
-          Show
+          Show all flashcards
         </Button>
       ) : (
         <Box>
