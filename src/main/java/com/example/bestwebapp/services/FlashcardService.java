@@ -12,4 +12,6 @@ public interface FlashcardService {
     Flashcard saveNewFlashcard(Flashcard flashcard);
 
     Optional<Flashcard> findFlashcardById(UUID id);
+
+    void deleteById(UUID id);
 }

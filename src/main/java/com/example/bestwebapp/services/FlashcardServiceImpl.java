@@ -29,4 +29,9 @@ public class FlashcardServiceImpl implements FlashcardService {
     public Optional<Flashcard> findFlashcardById(UUID id) {
         return Optional.ofNullable(flashcardRepository.findById(id).orElse(null));
     }
+
+    @Override
+    public void deleteById(UUID id) {
+        flashcardRepository.deleteById(id);
+    }
 }
