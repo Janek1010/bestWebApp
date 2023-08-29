@@ -1,10 +1,12 @@
 # bestWebApp
-## things to add:
-### FRONTEND
-1. deleting and changing the flashcard after clicking on it
-2. adding flashcards
-3. choosing specific category instead of all flashcards
-4. main webpage
-### BACKEND
-1. implementing users, every user needs to have their own decks; standard decks must also be available
-2. testing 
+
+This is a collaborative Java+React project.
+We are creating an interactive flashcards application, with an open and exploratory approach, without predefined goals.
+
+## Getting started
+
+- To launch server, start **src\main\java\com\example\bestwebapp\BestWebAppApplication.java**
+
+- To launch frontend (without backend), go to **src\frontend**, run `npm install` and then `npm start` command.
+
+- To make changes to the frontend and integrate it with backend, go to **src\frontend**, run `npm run build` and copy the contents of build folder into **src\main\resources\static**
