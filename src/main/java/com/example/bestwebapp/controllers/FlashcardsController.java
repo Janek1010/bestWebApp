@@ -20,8 +20,8 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @CrossOrigin
 public class FlashcardsController {
-    private static final String FLASHCARDS_PATH = "/api/flashcards";
-    private static final String FLASHCARDS_PATH_ID = "/api/flashcards/{id}";
+    public static final String FLASHCARDS_PATH = "/api/flashcards";
+    public static final String FLASHCARDS_PATH_ID = "/api/flashcards/{id}";
     private final FlashcardService flashcardService;
 
     @GetMapping(FLASHCARDS_PATH)
@@ -38,9 +38,8 @@ public class FlashcardsController {
     }
     // find by id
     @GetMapping(FLASHCARDS_PATH_ID)
-    public Flashcard getFlashcardById(@PathVariable("id") UUID id) throws ChangeSetPersister.NotFoundException {
-        return flashcardService.findFlashcardById(id).orElseThrow(ChangeSetPersister.NotFoundException::new);
-        //dodac potem implementacje NotFoundException wlasna
+    public Flashcard getFlashcardById(@PathVariable("id") UUID id)  {
+        return flashcardService.findFlashcardById(id).orElseThrow(NotFoundException::new);
     }
     @DeleteMapping(FLASHCARDS_PATH_ID)
     public ResponseEntity deleteFlashcardById(@PathVariable("id") UUID id){
